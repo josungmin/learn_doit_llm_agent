@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# uv가 생성하는 로컬 가상환경: uv sync로 다시 만들 수 있으므로 커밋하지 않음
+.venv/
+
+# uv 프로젝트의 재현 가능한 환경 정의: 학습 목적으로 명시적으로 Git 추적
+!pyproject.toml
+!uv.lock
+!.python-version
+
+# 환경 변수: 실제 비밀값은 제외하고, 변수 이름만 담은 예시 파일은 추적
+.env
+!.env.example
+
+# Python 실행 중 생성되는 로컬 파일
+__pycache__/
+*.py[cod]

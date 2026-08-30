@@ -1,0 +1,43 @@
+[project]
+name = "chap05"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "huggingface-hub<1",
+    "lightning==2.5.6",
+    "numpy==1.26.4",
+    "openai>=2.54.0",
+    "pandas>=3.0.5",
+    "pyannote-audio==3.1.1",
+    "python-docx>=1.2.0",
+    "python-dotenv>=1.2.3",
+    "pytorch-lightning==2.5.6",
+    "speechbrain==0.5.16",
+    "torch==2.8.0",
+    "torchaudio==2.8.0",
+    "torchvision==0.23.0",
+    "transformers<5",
+]
+
+[project.scripts]
+chap05 = "chap05:main"
+
+[build-system]
+requires = ["uv_build>=0.12.2,<0.13.0"]
+build-backend = "uv_build"
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu126" }
+torchvision = { index = "pytorch-cu126" }
+torchaudio = { index = "pytorch-cu126" }
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.3.0",
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "no": 1,
+        "eng": "Which of the following descriptions of the image is incorrect?  \n- (1) An anime-style character wearing yellow and orange clothing is shown.  \n- (2) The character is holding a sword with both hands.  \n- (3) Bright lightning and light effects appear around the character.  \n- (4) The character is wearing a blue hat.",
+        "img": "귀멸의칼날_젠이츠.png"
+    },
+    {
+        "no": 2,
+        "eng": "Which of the following descriptions of the image is incorrect?  \n- (1) A giraffe is standing behind the other animals.  \n- (2) A lion is lying in the foreground.  \n- (3) Several bees are flying around the animals.  \n- (4) An elephant is grazing beside the lion.",
+        "img": "틀린그림찾기_1.png"
+    },
+    {
+        "no": 3,
+        "eng": "Which of the following descriptions of the image is incorrect?  \n- (1) A giraffe is standing behind the lion.  \n- (2) The lion is sitting in a tree.  \n- (3) Two bears are around the lion.  \n- (4) There is a snake in the lower left part of the picture.",
+        "img": "틀린그림찾기_2.png"
+    }
+]
