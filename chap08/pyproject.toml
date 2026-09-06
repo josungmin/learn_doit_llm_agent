@@ -1,0 +1,20 @@
+[project]
+name = "chap08"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "langchain-openai>=1.6.0",
+    "pytz>=2026.3.post1",
+    "streamlit>=1.63.0",
+    "tabulate>=0.10.0",
+    "yfinance>=1.7.0",
+]
+
+[project.scripts]
+chap08 = "chap08:main"
+
+[build-system]
+requires = ["uv_build>=0.12.2,<0.13.0"]
+build-backend = "uv_build"
