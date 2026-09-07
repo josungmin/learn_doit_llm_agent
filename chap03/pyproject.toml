@@ -1,0 +1,18 @@
+[project]
+name = "chap03"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "openai>=1.58.1",
+    "python-dotenv>=1.2.3",
+    "rich>=15.0.0",
+]
+
+[project.scripts]
+chap03 = "chap03:main"
+
+[build-system]
+requires = ["uv_build>=0.12.2,<0.13.0"]
+build-backend = "uv_build"
