@@ -1,0 +1,29 @@
+[project]
+name = "chap10"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "ddgs>=9.16.0",
+    "duckduckgo-search>=8.1.1",
+    "langchain>=1.4.2",
+    "langchain-classic>=1.0.8",
+    "langchain-community>=0.4.2",
+    "langchain-openai>=1.6.2",
+    "python-dotenv>=1.2.3",
+    "pytz>=2026.3.post1",
+    "streamlit>=1.64.0",
+    "tavily-python>=0.8.4",
+    "tqdm>=4.70.1",
+    "youtube-search>=2.2.0",
+    "youtube-transcript-api>=1.2.4",
+]
+
+[project.scripts]
+chap10 = "chap10:main"
+
+[build-system]
+requires = ["uv_build>=0.12.2,<0.13.0"]
+build-backend = "uv_build"
