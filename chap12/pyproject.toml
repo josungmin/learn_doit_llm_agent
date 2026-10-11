@@ -1,0 +1,22 @@
+[project]
+name = "chap12"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "ddgs>=9.16.0",
+    "langchain>=1.4.4",
+    "langchain-community>=0.4.2",
+    "langchain-openai>=1.7.0",
+    "langgraph>=1.2.14",
+    "pytz>=2026.5",
+]
+
+[project.scripts]
+chap12 = "chap12:main"
+
+[build-system]
+requires = ["uv_build>=0.12.2,<0.13.0"]
+build-backend = "uv_build"
