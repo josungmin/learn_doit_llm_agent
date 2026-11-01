@@ -31,25 +31,23 @@ LangGraph로 Supervisor와 역할별 에이전트를 연결해 책의 목차를 
 
 ## 📖 장별 학습
 
-| Chapter | 학습 내용 | 상태 |
-| :---: | --- | :---: |
-| [Ch02](./chap02/) | LLM / OpenAI API 기초 | ✅ |
-| [Ch03](./chap03/) | LLM 애플리케이션 개발 | ✅ |
-| [Ch04](./chap04/) | PDF 문서 전처리 / 텍스트 요약 | ✅ |
-| [Ch05](./chap05/) | 음성 인식 / 화자 분리 | ✅ |
-| [Ch06](./chap06/) | Vision 모델 / 이미지 분석 / TTS | ✅ |
-| [Ch07](./chap07/) | Function Calling / 주식 데이터 활용 | ✅ |
-| [Ch08](./chap08/) | LangChain / LCEL / `@tool` / Pydantic | ✅ |
-| [Ch09](./chap09/) | RAG / 문서 기반 질의응답 | ✅ |
-| [Ch10](./chap10/) | 인터넷 검색 / 웹·YouTube 활용 | ✅ |
-| [Ch11](./chap11/) | 로컬 LLM / DeepSeek / RAG | ✅ |
-| [Ch12](./chap12/) | LangGraph / 상태 관리 / 메모리 | ✅ |
-| [Ch13](./chap13/) | LangGraph 기반 RAG / 멀티에이전트 | ✅ |
-| [Ch14](./chap14/) | LangGraph 기반 멀티에이전트 | ✅ |
-| [Ch15](./chap15/) | 스스로 판단하고 작업하는 멀티에이전트 | ✅ |
-| Ch16 | 로컬 LLM / 임베딩 모델 / AI 서비스 발전 | ✅ |
-
-> ✅ 완료 · 🔄 진행 중 · ⬜ 예정
+| Chapter | 학습 내용 | 주요 기술·주제 |
+| :---: | --- | --- |
+| [Ch02](./chap02/) | 환경 설정하고 GPT API 시작하기 | Python, OpenAI API |
+| [Ch03](./chap03/) | Open AI의 API로 챗봇 만들기 | 프롬프트, 챗봇 |
+| [Ch04](./chap04/) | 문서와 논문을 요약하는 AI 연구원 | PDF 전처리, 텍스트 요약 |
+| [Ch05](./chap05/) | 회의록을 정리하는 AI 서기 | 음성 인식, 화자 분리 |
+| [Ch06](./chap06/) | GPT-4o를 이용한 AI 이미지 분석가 | Vision, 이미지 분석, TTS |
+| [Ch07](./chap07/) | 최신 주식 정보를 알려 주는 AI 투자자 | Function Calling, 주식 데이터 |
+| [Ch08](./chap08/) | 랭체인으로 에이전트 만들기 | LangChain, LCEL, Pydantic |
+| [Ch09](./chap09/) | RAG로 문서에 기반해 답변하는 챗봇 만들기 | RAG, 벡터 검색 |
+| [Ch10](./chap10/) | 인터넷 검색을 활용해 답변하는 챗봇 만들기 | 웹 검색, YouTube |
+| [Ch11](./chap11/) | 로컬에서 DeepSeek-R1 모델 사용하기 | 로컬 LLM, DeepSeek |
+| [Ch12](./chap12/) | 랭그래프와 친해지기 | LangGraph, 상태, 메모리 |
+| [Ch13](./chap13/) | 랭그래프를 활용한 멀티에이전트 RAG 만들기 | LangGraph, RAG, 멀티에이전트 |
+| [Ch14](./chap14/) | 랭그래프로 목차를 작성하는 멀티에이전트 만들기 | LangGraph, 멀티에이전트, 검색 |
+| [Ch15](./chap15/) | 스스로 판단하고 작업하는 멀티에이전트 만들기 | 멀티에이전트, 작업 관리, 검토 |
+| Ch16 | 인공지능 더 안전하게 활용하기 | AI 안전 |
 
 ## 💡 추가 학습 기록
 
