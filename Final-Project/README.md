@@ -50,6 +50,31 @@
 INFO AI가 생성한 검색어: 'single-player strategy games Steam under 10000 KRW'
 ```
 
+### LangSmith 추적 설정
+
+LangSmith를 연결하면 `steam_game_recommendation` 실행 안에서 `plan → search → fetch → extract → finish` 단계와 LLM·도구 호출을 확인할 수 있습니다. 현재 설치된 LangChain 의존성에 LangSmith SDK가 포함되어 있습니다.
+
+1. [LangSmith](https://smith.langchain.com/)에 로그인하고 [API 키를 발급](https://docs.langchain.com/langsmith/create-account-api-key)합니다.
+2. **에이전트 기반 워크스페이스**라면 LangSmith에서 Observability 에이전트를 만들고 Agent ID를 확인합니다.
+3. 기존 `.env` 파일에 다음 값을 추가하거나 이미 있는 항목을 수정합니다. 예시 파일을 기존 `.env`에 덮어쓰지 마세요.
+
+   ```text
+   LANGSMITH_TRACING=true
+   LANGSMITH_API_KEY=발급받은_LangSmith_API_키
+   LANGSMITH_AGENT_ID=LangSmith에서_확인한_Agent_ID
+   LANGSMITH_AGENT_ENVIRONMENT=local
+   ```
+
+4. 봇을 재시작하고 디스코드에서 `/게임추천`을 실행합니다. LangSmith에서 해당 에이전트의 **Tracing** 화면을 열고 **Local** 환경을 선택해 실행을 확인합니다.
+
+프로젝트 기반 워크스페이스나 자체 호스팅 환경에서는 두 `LANGSMITH_AGENT_*` 항목 대신 `LANGSMITH_PROJECT=steam-game-recommender`를 설정합니다. 에이전트 방식과 프로젝트 방식을 동시에 설정하지 마세요. 기존 `LANGCHAIN_PROJECT`, `LANGCHAIN_SESSION` 환경 변수도 에이전트 방식과 충돌할 수 있습니다. 워크스페이스나 지역에 따라 `LANGSMITH_WORKSPACE_ID` 또는 `LANGSMITH_ENDPOINT`가 추가로 필요할 수 있습니다. [LangGraph 추적 공식 안내](https://docs.langchain.com/langsmith/trace-with-langgraph)
+
+기록이 보이지 않으면 API 키, Agent ID 또는 프로젝트 이름, 워크스페이스·지역 설정과 터미널의 LangSmith 오류를 확인하세요.
+
+추적을 끄려면 `LANGSMITH_TRACING=false`로 변경하고 봇을 재시작합니다. 같은 이름의 시스템 환경 변수나 기존 `LANGSMITH_TRACING_V2`·`LANGCHAIN_TRACING_V2` 설정이 있으면 함께 확인하세요.
+
+> 추적에는 인원·예산·선호, 검색어, 스팀 설명, 모델 입출력과 추천 결과가 포함될 수 있습니다. 디스코드 사용자 ID는 추천 그래프에 전달하지 않습니다. API 키는 공유하거나 Git에 올리지 마세요.
+
 ## 프로젝트 구조
 
 ```text
@@ -71,7 +96,7 @@ Final-Project/
 ```
 
 - **요청과 세션:** [`bot.py`](./bot.py)가 명령과 참가 조건을 받고, [`sessions.py`](./sessions.py)가 서버·채널별 방장과 참가자를 관리합니다. 추천 시 조건을 복사해 [`recommender.py`](./recommender.py)에 전달하며, 검색 중 조건이 바뀌면 이전 결과를 게시하지 않습니다.
-- **데이터 처리:** [`models.py`](./models.py)가 요청과 AI 근거의 형식을 정의합니다. [`tools.py`](./tools.py)가 게임 정보를 가져오고 [`utils.py`](./utils.py)가 이를 검증해 결과를 만듭니다. 참가 상태와 검색 결과는 메모리에서만 관리합니다.
+- **데이터 처리:** [`models.py`](./models.py)가 요청과 AI 근거의 형식을 정의합니다. [`tools.py`](./tools.py)가 게임 정보를 가져오고 [`utils.py`](./utils.py)가 이를 검증해 결과를 만듭니다. 앱은 참가 상태와 검색 결과를 메모리에서 관리하며, LangSmith 추적을 켜면 실행 기록이 LangSmith에 전송됩니다.
 
 ## 추천 처리 흐름과 AI의 역할
 

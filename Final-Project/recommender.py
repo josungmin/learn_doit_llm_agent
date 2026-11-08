@@ -150,4 +150,4 @@ def build_graph(model: ChatOpenAI):
     graph.add_edge("fetch", "extract")
     graph.add_edge("extract", "finish")
     graph.add_edge("finish", END)
-    return graph.compile()
+    return graph.compile(name="steam_game_recommendation")
